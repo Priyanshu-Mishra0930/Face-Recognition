@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAttend — Classroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..//css/classroom.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">V</div>
+            <div class="brand-name">Vision<span>Attend</span></div>
+        </div>
+
+        <div class="nav-label">Workspace</div>
+
+        <nav class="nav">
+
+            <button class="nav-item" data-page="dashboard">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item active" data-page="classrooms">
+                <span class="nav-icon">▦</span>
+                <span>My Classrooms</span>
+            </button>
+
+            <button class="nav-item" data-page="join">
+                <span class="nav-icon">＋</span>
+                <span>Join Classroom</span>
+            </button>
+
+            <button class="nav-item" data-page="attendance">
+                <span class="nav-icon">◷</span>
+                <span>Attendance</span>
+            </button>
+
+            <button class="nav-item" data-page="profile">
+                <span class="nav-icon">◎</span>
+                <span>Profile</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="profile-mini">
+                <div class="avatar">PM</div>
+
+                <div class="profile-info">
+                    <div class="profile-name">Prince</div>
+                    <div class="profile-role">Student</div>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="content">
+
+            <button class="back-btn" id="backBtn">
+                <span>←</span>
+                <span>My Classrooms</span>
+            </button>
+
+            <section class="class-hero">
+
+                <div class="hero-left">
+
+                    <div class="subject-icon">DS</div>
+
+                    <div>
+                        <div class="eyebrow">ENROLLED CLASSROOM</div>
+
+                        <h1 id="className">Data Structures</h1>
+
+                        <div class="class-details">
+                            <span>CSE-A</span>
+                            <span>•</span>
+                            <span>Semester 3</span>
+                            <span>•</span>
+                            <span id="teacherName">Dr. Sharma</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="class-code">
+                    <span>CLASSROOM CODE</span>
+                    <strong>DS-A91K</strong>
+                </div>
+
+            </section>
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-label">Your Attendance</div>
+
+                    <div class="stat-main">
+                        <span class="stat-value">92.4%</span>
+                        <span class="stat-status">Good</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill" style="width:92.4%"></div>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-label">Present</div>
+                    <div class="stat-value">24</div>
+                    <div class="stat-meta">Sessions attended</div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-label">Absent</div>
+                    <div class="stat-value">02</div>
+                    <div class="stat-meta">Sessions missed</div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-label">Total Sessions</div>
+                    <div class="stat-value">26</div>
+                    <div class="stat-meta">This semester</div>
+
+                </div>
+
+            </section>
+
+            <section class="attendance-action">
+
+                <div class="action-content">
+
+                    <div class="camera-icon">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <div class="action-eyebrow">
+                            TODAY'S SESSION
+                        </div>
+
+                        <h2>Mark today's attendance</h2>
+
+                        <p>
+                            Verify your identity using face recognition
+                            and mark yourself present.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button class="attendance-btn" id="markAttendance">
+                    <span>◉</span>
+                    Mark Attendance
+                    <span>→</span>
+                </button>
+
+            </section>
+
+            <section class="recent-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <div class="eyebrow">ATTENDANCE HISTORY</div>
+                        <h2>Recent Attendance</h2>
+                    </div>
+
+                    <span class="session-count">26 Sessions</span>
+
+                </div>
+
+                <div class="attendance-table">
+
+                    <div class="table-header">
+                        <span>Date</span>
+                        <span>Session</span>
+                        <span>Check-in</span>
+                        <span>Status</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span>28 Aug 2026</span>
+                        <span>Data Structures</span>
+                        <span>10:04 AM</span>
+                        <span class="present">✓ Present</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span>27 Aug 2026</span>
+                        <span>Data Structures</span>
+                        <span>10:02 AM</span>
+                        <span class="present">✓ Present</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span>26 Aug 2026</span>
+                        <span>Data Structures</span>
+                        <span>—</span>
+                        <span class="absent">× Absent</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span>25 Aug 2026</span>
+                        <span>Data Structures</span>
+                        <span>10:07 AM</span>
+                        <span class="present">✓ Present</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span>24 Aug 2026</span>
+                        <span>Data Structures</span>
+                        <span>10:03 AM</span>
+                        <span class="present">✓ Present</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="..//js/classroom.js"></script>
+
+</body>
+</html>

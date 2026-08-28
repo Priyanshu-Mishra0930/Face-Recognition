@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAttend — Student Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..//css/student.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">V</div>
+            <div class="brand-name">Vision<span>Attend</span></div>
+        </div>
+
+        <div class="nav-label">Workspace</div>
+
+        <nav class="nav">
+            <button class="nav-item active" type="button" data-page="dashboard">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" type="button" data-page="classrooms">
+                <span class="nav-icon">▦</span>
+                <span>My Classrooms</span>
+            </button>
+
+            <button class="nav-item" type="button" data-page="join">
+                <span class="nav-icon">＋</span>
+                <span>Join Classroom</span>
+            </button>
+
+            <button class="nav-item" type="button" data-page="attendance">
+                <span class="nav-icon">◷</span>
+                <span>Attendance</span>
+            </button>
+
+            <button class="nav-item" type="button" data-page="profile">
+                <span class="nav-icon">◎</span>
+                <span>Profile</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile-mini">
+                <div class="avatar">PM</div>
+                <div class="profile-info">
+                    <div class="profile-name">Prince</div>
+                    <div class="profile-role">Student</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="content">
+
+            <header class="topbar">
+                <div>
+                    <div class="eyebrow">STUDENT PORTAL</div>
+                    <h1 class="page-title">Good morning, Prince</h1>
+                    <p class="subtitle">Here's your attendance overview.</p>
+                </div>
+
+                <div class="date-pill">
+                    <span>◷</span>
+                    <span id="currentDate"></span>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Overall Attendance</span>
+                        <div class="stat-icon">%</div>
+                    </div>
+                    <div class="stat-value">92.4%</div>
+                    <div class="stat-meta positive">↑ 3.2% this month</div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Enrolled Classes</span>
+                        <div class="stat-icon">▦</div>
+                    </div>
+                    <div class="stat-value">05</div>
+                    <div class="stat-meta">Active classrooms</div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Present</span>
+                        <div class="stat-icon">✓</div>
+                    </div>
+                    <div class="stat-value">42</div>
+                    <div class="stat-meta">This semester</div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Classes Today</span>
+                        <div class="stat-icon">◷</div>
+                    </div>
+                    <div class="stat-value">03</div>
+                    <div class="stat-meta">1 attendance pending</div>
+                </article>
+
+            </section>
+
+            <section class="section">
+
+                <div class="section-header">
+                    <h2 class="section-title">My Enrolled Classes</h2>
+                    <button class="section-action" type="button">View all →</button>
+                </div>
+
+                <div class="class-grid">
+
+                    <article class="class-card" data-class="Data Structures">
+
+                        <div class="class-header">
+                            <div class="class-icon">DS</div>
+
+                            <div class="status-badge">
+                                <span class="status-dot"></span>
+                                Active
+                            </div>
+                        </div>
+
+                        <div class="class-name">Data Structures</div>
+                        <div class="class-meta">CSE-A · Semester 3</div>
+
+                        <div class="attendance-row">
+                            <span class="attendance-label">Attendance</span>
+                            <span class="attendance-percent">92%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-fill" style="width:92%"></div>
+                        </div>
+
+                        <div class="class-footer">
+                            <span class="teacher">Dr. Sharma</span>
+                            <span class="view-class">View Class →</span>
+                        </div>
+
+                    </article>
+
+                    <article class="class-card" data-class="Database Systems">
+
+                        <div class="class-header">
+                            <div class="class-icon">DB</div>
+
+                            <div class="status-badge">
+                                <span class="status-dot"></span>
+                                Active
+                            </div>
+                        </div>
+
+                        <div class="class-name">Database Systems</div>
+                        <div class="class-meta">CSE-A · Semester 3</div>
+
+                        <div class="attendance-row">
+                            <span class="attendance-label">Attendance</span>
+                            <span class="attendance-percent">87%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-fill" style="width:87%"></div>
+                        </div>
+
+                        <div class="class-footer">
+                            <span class="teacher">Prof. Mehta</span>
+                            <span class="view-class">View Class →</span>
+                        </div>
+
+                    </article>
+
+                    <article class="class-card" data-class="Operating Systems">
+
+                        <div class="class-header">
+                            <div class="class-icon">OS</div>
+
+                            <div class="status-badge">
+                                <span class="status-dot"></span>
+                                Active
+                            </div>
+                        </div>
+
+                        <div class="class-name">Operating Systems</div>
+                        <div class="class-meta">CSE-A · Semester 3</div>
+
+                        <div class="attendance-row">
+                            <span class="attendance-label">Attendance</span>
+                            <span class="attendance-percent">84%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-fill" style="width:84%"></div>
+                        </div>
+
+                        <div class="class-footer">
+                            <span class="teacher">Dr. Verma</span>
+                            <span class="view-class">View Class →</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="bottom-grid">
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <h2 class="panel-title">Today's Classes</h2>
+                        <span class="upcoming">29 AUG</span>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div class="today-item">
+                            <div class="time">10:00</div>
+
+                            <div class="today-info">
+                                <div class="today-name">Data Structures</div>
+                                <div class="today-room">Block 32 · Room 204</div>
+                            </div>
+
+                            <button class="join-btn" type="button">Open</button>
+                        </div>
+
+                        <div class="today-item">
+                            <div class="time">12:00</div>
+
+                            <div class="today-info">
+                                <div class="today-name">Database Systems</div>
+                                <div class="today-room">Block 34 · Room 108</div>
+                            </div>
+
+                            <span class="upcoming">UPCOMING</span>
+                        </div>
+
+                        <div class="today-item">
+                            <div class="time">15:00</div>
+
+                            <div class="today-info">
+                                <div class="today-name">Operating Systems</div>
+                                <div class="today-room">Block 32 · Room 301</div>
+                            </div>
+
+                            <span class="upcoming">UPCOMING</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <h2 class="panel-title">Recent Attendance</h2>
+                        <button class="section-action" type="button">View all</button>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div class="attendance-item">
+                            <div class="attendance-status present">✓</div>
+
+                            <div class="attendance-info">
+                                <div class="attendance-class">Data Structures</div>
+                                <div class="attendance-date">28 Aug · 10:04 AM</div>
+                            </div>
+
+                            <span class="attendance-state positive">Present</span>
+                        </div>
+
+                        <div class="attendance-item">
+                            <div class="attendance-status present">✓</div>
+
+                            <div class="attendance-info">
+                                <div class="attendance-class">Database Systems</div>
+                                <div class="attendance-date">28 Aug · 12:07 PM</div>
+                            </div>
+
+                            <span class="attendance-state positive">Present</span>
+                        </div>
+
+                        <div class="attendance-item">
+                            <div class="attendance-status absent">×</div>
+
+                            <div class="attendance-info">
+                                <div class="attendance-class">Operating Systems</div>
+                                <div class="attendance-date">27 Aug · 03:02 PM</div>
+                            </div>
+
+                            <span class="attendance-state absent-text">Absent</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+</div>
+<script src="..//js/student.js"></script>
+
+</body>
+</html>

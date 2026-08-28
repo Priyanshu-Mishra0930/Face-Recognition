@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAttend — Mark Attendance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..//css/attendance.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">V</div>
+            <div class="brand-name">Vision<span>Attend</span></div>
+        </div>
+
+        <div class="nav-label">Workspace</div>
+
+        <nav class="nav">
+
+            <button class="nav-item" data-page="dashboard">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item active" data-page="attendance">
+                <span class="nav-icon">◷</span>
+                <span>Attendance</span>
+            </button>
+
+            <button class="nav-item" data-page="classrooms">
+                <span class="nav-icon">▦</span>
+                <span>My Classrooms</span>
+            </button>
+
+            <button class="nav-item" data-page="join">
+                <span class="nav-icon">＋</span>
+                <span>Join Classroom</span>
+            </button>
+
+            <button class="nav-item" data-page="profile">
+                <span class="nav-icon">◎</span>
+                <span>Profile</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="profile-mini">
+                <div class="avatar">PM</div>
+
+                <div class="profile-info">
+                    <div class="profile-name">Prince</div>
+                    <div class="profile-role">Student</div>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="content">
+
+            <button class="back-btn" id="backBtn">
+                ← Back to Classroom
+            </button>
+
+            <section class="page-heading">
+                <div class="eyebrow">FACE VERIFICATION</div>
+                <h1>Mark Today's Attendance</h1>
+                <p>Verify your identity to mark yourself present.</p>
+            </section>
+
+            <section class="verification-layout">
+
+                <div class="camera-card">
+
+                    <div class="camera-header">
+                        <div>
+                            <span class="camera-label">LIVE CAMERA</span>
+                            <h2>Face Verification</h2>
+                        </div>
+
+                        <div class="camera-status">
+                            <span></span>
+                            Camera Active
+                        </div>
+                    </div>
+
+                    <div class="camera-frame">
+
+                        <video id="camera" autoplay playsinline></video>
+
+                        <div class="camera-overlay">
+
+                            <div class="scan-corner top-left"></div>
+                            <div class="scan-corner top-right"></div>
+                            <div class="scan-corner bottom-left"></div>
+                            <div class="scan-corner bottom-right"></div>
+
+                            <div class="face-guide">
+                                <div class="scan-line"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="camera-message" id="cameraMessage">
+                            Position your face inside the frame
+                        </div>
+
+                    </div>
+
+                    <div class="camera-footer">
+
+                        <div class="security-info">
+                            <span>◉</span>
+                            Your face data is processed securely
+                        </div>
+
+                        <div class="camera-time" id="cameraTime">
+                            00:00
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="verification-card">
+
+                    <div class="verification-icon" id="verificationIcon">
+                        ◉
+                    </div>
+
+                    <div class="verification-content">
+
+                        <span class="verification-label" id="verificationLabel">
+                            READY TO VERIFY
+                        </span>
+
+                        <h2 id="verificationTitle">
+                            Looking for your face
+                        </h2>
+
+                        <p id="verificationText">
+                            Make sure your face is clearly visible
+                            and positioned inside the frame.
+                        </p>
+
+                    </div>
+
+                    <div class="confidence-box" id="confidenceBox">
+
+                        <div class="confidence-header">
+                            <span>Recognition Confidence</span>
+                            <strong id="confidenceValue">--</strong>
+                        </div>
+
+                        <div class="confidence-bar">
+                            <div id="confidenceFill"></div>
+                        </div>
+
+                    </div>
+
+                    <button class="verify-btn" id="verifyBtn">
+                        <span>◉</span>
+                        Start Verification
+                    </button>
+
+                    <div class="verification-note">
+                        Attendance can only be marked once per session.
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="session-info">
+
+                <div class="session-item">
+                    <span class="session-icon">▦</span>
+                    <div>
+                        <span>CLASSROOM</span>
+                        <strong id="className">Data Structures</strong>
+                    </div>
+                </div>
+
+                <div class="session-item">
+                    <span class="session-icon">◎</span>
+                    <div>
+                        <span>TEACHER</span>
+                        <strong>Dr. Sharma</strong>
+                    </div>
+                </div>
+
+                <div class="session-item">
+                    <span class="session-icon">◷</span>
+                    <div>
+                        <span>SESSION</span>
+                        <strong>29 Aug 2026</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="success-modal" id="successModal">
+
+                <div class="success-card">
+
+                    <div class="success-icon">✓</div>
+
+                    <span>IDENTITY VERIFIED</span>
+
+                    <h2>Attendance Marked</h2>
+
+                    <p>
+                        You have been successfully marked present
+                        for today's session.
+                    </p>
+
+                    <div class="success-details">
+
+                        <div>
+                            <span>STUDENT</span>
+                            <strong>Prince</strong>
+                        </div>
+
+                        <div>
+                            <span>CONFIDENCE</span>
+                            <strong id="successConfidence">96.4%</strong>
+                        </div>
+
+                        <div>
+                            <span>TIME</span>
+                            <strong id="successTime">09:42 AM</strong>
+                        </div>
+
+                    </div>
+
+                    <button class="done-btn" id="doneBtn">
+                        Done
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="..//js/attendance.js"></script>
+
+</body>
+</html>

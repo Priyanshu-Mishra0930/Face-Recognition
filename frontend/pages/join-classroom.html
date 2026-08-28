@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAttend — Join Classroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..//css/join-classroom.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">V</div>
+            <div class="brand-name">Vision<span>Attend</span></div>
+        </div>
+
+        <div class="nav-label">Workspace</div>
+
+        <nav class="nav">
+
+            <button class="nav-item" data-page="dashboard">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" data-page="classrooms">
+                <span class="nav-icon">▦</span>
+                <span>My Classrooms</span>
+            </button>
+
+            <button class="nav-item active" data-page="join">
+                <span class="nav-icon">＋</span>
+                <span>Join Classroom</span>
+            </button>
+
+            <button class="nav-item" data-page="attendance">
+                <span class="nav-icon">◷</span>
+                <span>Attendance</span>
+            </button>
+
+            <button class="nav-item" data-page="profile">
+                <span class="nav-icon">◎</span>
+                <span>Profile</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="profile-mini">
+                <div class="avatar">PM</div>
+
+                <div class="profile-info">
+                    <div class="profile-name">Prince</div>
+                    <div class="profile-role">Student</div>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="content">
+
+            <section class="join-wrapper">
+
+                <div class="join-header">
+                    <div class="join-icon">＋</div>
+
+                    <div class="eyebrow">CLASSROOM ACCESS</div>
+
+                    <h1>Join a Classroom</h1>
+
+                    <p>
+                        Enter the classroom code provided by your teacher
+                        to join the class.
+                    </p>
+                </div>
+
+                <div class="join-card">
+
+                    <div class="input-section">
+
+                        <label for="classCode">
+                            Classroom Code
+                        </label>
+
+                        <div class="code-input-wrapper">
+
+                            <span class="code-icon">#</span>
+
+                            <input
+                                type="text"
+                                id="classCode"
+                                maxlength="8"
+                                placeholder="e.g. DS-A91K"
+                                autocomplete="off"
+                                spellcheck="false"
+                            >
+
+                        </div>
+
+                        <div class="input-hint">
+                            Ask your teacher for the classroom code.
+                        </div>
+
+                    </div>
+
+                    <button class="join-btn" id="joinBtn">
+                        <span>＋</span>
+                        Join Classroom
+                        <span>→</span>
+                    </button>
+
+                    <div class="error-message" id="errorMessage">
+                        Invalid classroom code. Please check and try again.
+                    </div>
+
+                </div>
+
+                <div class="how-it-works">
+
+                    <div class="section-title">
+                        How it works
+                    </div>
+
+                    <div class="steps">
+
+                        <div class="step">
+                            <div class="step-number">01</div>
+                            <div>
+                                <strong>Get the code</strong>
+                                <p>Ask your teacher for the classroom code.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">02</div>
+                            <div>
+                                <strong>Enter the code</strong>
+                                <p>Enter the unique code in the field above.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">03</div>
+                            <div>
+                                <strong>Join the class</strong>
+                                <p>Your classroom will appear on your dashboard.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="success-message" id="successMessage">
+
+                    <div class="success-icon">✓</div>
+
+                    <div>
+                        <span>CLASSROOM JOINED</span>
+                        <strong id="joinedClassName">
+                            Data Structures
+                        </strong>
+                        <p>
+                            The classroom has been added to your account.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="..//js/join-classroom.js"></script>
+
+</body>
+</html>
