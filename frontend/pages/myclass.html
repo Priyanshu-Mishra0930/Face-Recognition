@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VisionAttend — DSA Classroom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css/myclass.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><i data-lucide="scan-face"></i></div>
+        <div><strong>VisionAttend</strong><span>Attendance, Reimagined.</span></div>
+      </div>
+
+      <div class="workspace-label">TEACHER WORKSPACE</div>
+      <nav>
+        <a href="#" class="nav-item"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+        <a href="#" class="nav-item active"><i data-lucide="school"></i>My Classrooms</a>
+        <a href="#" class="nav-item"><i data-lucide="plus-square"></i>Create Classroom</a>
+        <a href="#" class="nav-item"><i data-lucide="scan-line"></i>Live Session</a>
+        <a href="#" class="nav-item"><i data-lucide="clipboard-check"></i>Attendance</a>
+        <a href="#" class="nav-item"><i data-lucide="chart-no-axes-combined"></i>Analytics</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="#" class="nav-item"><i data-lucide="settings"></i>Settings</a>
+        <a href="#" class="profile-mini">
+          <div class="avatar">ST</div>
+          <div><strong>Teacher</strong><span>teacher@school.edu</span></div>
+          <i data-lucide="chevron-right"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuBtn"><i data-lucide="menu"></i></button>
+        <div class="breadcrumbs"><span>My Classrooms</span><i data-lucide="chevron-right"></i><strong>DSA</strong></div>
+        <div class="top-actions">
+          <button class="icon-button" title="Notifications"><i data-lucide="bell"></i><span class="notification-dot"></span></button>
+          <div class="top-avatar">ST</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="class-header">
+          <div>
+            <button class="back-link" id="backBtn"><i data-lucide="arrow-left"></i> Back to Classrooms</button>
+            <div class="title-row">
+              <div class="subject-icon"><i data-lucide="binary"></i></div>
+              <div>
+                <h1>Data Structures &amp; Algorithms</h1>
+                <p>DSA <span class="separator">•</span> Section A <span class="separator">•</span> 5th Semester</p>
+              </div>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="btn secondary" id="manageBtn"><i data-lucide="users"></i> Manage Students</button>
+            <button class="btn primary" id="sessionBtn"><i data-lucide="scan-line"></i> Start Session</button>
+          </div>
+        </section>
+
+        <section class="info-strip">
+          <div class="info-item"><span>Teacher</span><strong>Prof. Sharma</strong></div>
+          <div class="info-item"><span>Classroom ID</span><strong>DSA-5A-024</strong></div>
+          <div class="info-item join"><span>Join Code</span><strong id="joinCode">DSA5A24</strong><button class="copy-btn" id="copyBtn"><i data-lucide="copy"></i></button></div>
+          <div class="info-item"><span>Today's Session</span><strong id="liveClock">--:--:--</strong></div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-icon neutral"><i data-lucide="users"></i></div>
+            <div><span>Total Strength</span><strong id="total">60</strong><small>Enrolled students</small></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon success"><i data-lucide="user-check"></i></div>
+            <div><span>Present</span><strong id="present">48</strong><small id="presentSub">80% of class</small></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon danger"><i data-lucide="user-x"></i></div>
+            <div><span>Absent</span><strong id="absent">12</strong><small id="absentSub">20% of class</small></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon accent"><i data-lucide="activity"></i></div>
+            <div><span>Attendance</span><strong id="percentage">80%</strong><small>Today's rate</small></div>
+          </article>
+        </section>
+
+        <section class="attendance-card">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow"><span class="live-dot"></span> LIVE ROSTER</div>
+              <h2>Today's Attendance</h2>
+              <p id="todayDate">Loading date...</p>
+            </div>
+            <div class="table-tools">
+              <label class="search">
+                <i data-lucide="search"></i>
+                <input id="search" type="text" placeholder="Search students..." />
+              </label>
+              <div class="filter-wrap">
+                <i data-lucide="list-filter"></i>
+                <select id="filter">
+                  <option value="all">All students</option>
+                  <option value="present">Present</option>
+                  <option value="absent">Absent</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th data-sort="name">Student <i data-lucide="chevrons-up-down"></i></th>
+                  <th data-sort="roll">Roll Number <i data-lucide="chevrons-up-down"></i></th>
+                  <th data-sort="status">Status <i data-lucide="chevrons-up-down"></i></th>
+                  <th>Check-in Time</th>
+                  <th class="action-col">Action</th>
+                </tr>
+              </thead>
+              <tbody id="studentRows"></tbody>
+            </table>
+          </div>
+          <div class="table-footer"><span id="showing">Showing 6 of 60 students</span><span><i data-lucide="shield-check"></i> Face recognition ready</span></div>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="activity-card">
+            <div class="card-heading"><div><h2>Recent Activity</h2><p>Latest classroom attendance events</p></div><button class="ghost-btn">View all <i data-lucide="arrow-up-right"></i></button></div>
+            <div class="activity-list" id="activityList"></div>
+          </article>
+
+          <article class="session-card">
+            <div class="scan-visual"><div class="scan-ring"><i data-lucide="scan-face"></i></div><span class="scan-line"></span></div>
+            <div><div class="eyebrow">VISION ENGINE</div><h2>Ready for live attendance</h2><p>Start a session to recognize enrolled students through the webcam.</p></div>
+            <button class="btn primary full" id="sessionBtn2"><i data-lucide="play"></i> Start Live Session</button>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"><i data-lucide="check-circle-2"></i><span></span></div>
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <button class="modal-close" id="closeModal"><i data-lucide="x"></i></button>
+      <div class="modal-avatar" id="modalAvatar">RK</div>
+      <div class="modal-title"><h2 id="modalName">Student</h2><span id="modalStatus" class="badge present">PRESENT</span></div>
+      <p class="modal-roll" id="modalRoll">Roll number</p>
+      <div class="detail-grid">
+        <div><span>Email</span><strong id="modalEmail">—</strong></div>
+        <div><span>Attendance</span><strong id="modalAttendance">—</strong></div>
+        <div><span>Present</span><strong id="modalPresent">—</strong></div>
+        <div><span>Absent</span><strong id="modalAbsent">—</strong></div>
+        <div><span>Last check-in</span><strong id="modalCheckin">—</strong></div>
+        <div><span>Recognition</span><strong id="modalConfidence">—</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/myclass.js"></script>
+</body>
+</html>
