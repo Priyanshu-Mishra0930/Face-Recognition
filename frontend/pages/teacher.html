@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VisionAttend — Teacher Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/teacher.css">
+
+
+</head>
+<body>
+  
+
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">V</div>
+        <div>
+          <h2>VisionAttend</h2>
+          <span>AI Attendance</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item active" href="#">
+          <span>⌂</span> Dashboard
+        </a>
+        <a class="nav-item" href="#classrooms">
+          <span>▦</span> My Classrooms
+        </a>
+        <a class="nav-item" href="#create">
+          <span>＋</span> Create Classroom
+        </a>
+        <a class="nav-item" href="#">
+          <span>◉</span> Live Session
+        </a>
+        <a class="nav-item" href="#">
+          <span>✓</span> Attendance
+        </a>
+        <a class="nav-item" href="#">
+          <span>▥</span> Analytics
+        </a>
+        <a class="nav-item" href="#">
+          <span>◯</span> Profile
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="ai-status">
+          <span class="status-dot"></span>
+          Face recognition ready
+        </div>
+      </div>
+    </aside>
+
+   
+    <main class="main">
+
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">TEACHER DASHBOARD</p>
+          <h1>Good evening, Professor</h1>
+        </div>
+
+        <div class="top-actions">
+          <div class="quote">
+            <span class="quote-icon">✦</span>
+            <span id="quoteText">“Education is the most powerful weapon.”</span>
+          </div>
+          <button class="profile" title="Profile">
+            <span class="avatar">P</span>
+            <span class="profile-name">Professor</span>
+          </button>
+        </div>
+      </header>
+
+     
+      <section class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">TOTAL CLASSROOMS</span>
+          <strong id="totalClassrooms">4</strong>
+          <small>Created by you</small>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">ACTIVE SESSION</span>
+          <strong class="success-text">1</strong>
+          <small>Live right now</small>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">STUDENTS PRESENT</span>
+          <strong>42</strong>
+          <small>Across active sessions</small>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">AVG. ATTENDANCE</span>
+          <strong>91.4%</strong>
+          <small>Last 30 days</small>
+        </div>
+      </section>
+
+      <section class="section-head" id="classrooms">
+        <div>
+          <p class="eyebrow">YOUR CLASSES</p>
+          <h2>My Classrooms</h2>
+        </div>
+        <button class="primary-btn" id="openCreate">＋ Create Classroom</button>
+      </section>
+
+     
+      <section class="classroom-grid" id="classroomGrid">
+
+        <article class="classroom-card">
+          <div class="class-top">
+            <div class="subject-icon">DS</div>
+            <span class="live-badge">LIVE</span>
+          </div>
+          <h3>Data Structures & Algorithms</h3>
+          <p>Computer Science · Section A</p>
+          <div class="card-meta">
+            <span>👥 32 Students</span>
+            <span>CODE: <b>DSA24</b></span>
+          </div>
+          <button class="outline-btn">Start Session</button>
+        </article>
+
+        <article class="classroom-card">
+          <div class="class-top">
+            <div class="subject-icon">DB</div>
+          </div>
+          <h3>Database Management Systems</h3>
+          <p>Computer Science · Section B</p>
+          <div class="card-meta">
+            <span>👥 28 Students</span>
+            <span>CODE: <b>DBMS18</b></span>
+          </div>
+          <button class="outline-btn">Start Session</button>
+        </article>
+
+        <article class="classroom-card">
+          <div class="class-top">
+            <div class="subject-icon">C++</div>
+          </div>
+          <h3>Object Oriented Programming</h3>
+          <p>Computer Science · Section A</p>
+          <div class="card-meta">
+            <span>👥 35 Students</span>
+            <span>CODE: <b>CPP11</b></span>
+          </div>
+          <button class="outline-btn">Start Session</button>
+        </article>
+
+        <article class="classroom-card">
+          <div class="class-top">
+            <div class="subject-icon">JV</div>
+          </div>
+          <h3>Java Programming</h3>
+          <p>Computer Science · Section C</p>
+          <div class="card-meta">
+            <span>👥 30 Students</span>
+            <span>CODE: <b>JAVA07</b></span>
+          </div>
+          <button class="outline-btn">Start Session</button>
+        </article>
+
+        <!-- This button moves naturally to the next grid position -->
+        <button class="new-class-card" id="newClassButton">
+          <span class="plus">＋</span>
+          <strong>Make a New Class</strong>
+          <small>Add another classroom</small>
+        </button>
+
+      </section>
+
+      
+      <div class="modal-backdrop" id="modal">
+        <div class="modal">
+          <button class="close-btn" id="closeModal">×</button>
+          <p class="eyebrow">NEW CLASSROOM</p>
+          <h2>Create Classroom</h2>
+          <p class="modal-subtitle">Create a classroom and generate a join code for students.</p>
+
+          <form id="classForm">
+            <label>
+              Classroom Name
+              <input id="className" type="text" placeholder="e.g. Web Development" required>
+            </label>
+
+            <label>
+              Subject
+              <input id="subject" type="text" placeholder="e.g. Computer Science" required>
+            </label>
+
+            <label>
+              Section
+              <input id="section" type="text" placeholder="e.g. A" required>
+            </label>
+
+            <label>
+              Semester
+              <input id="semester" type="text" placeholder="e.g. Semester 5" required>
+            </label>
+
+            <button class="primary-btn full" type="submit">Create Classroom</button>
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/teacher.js"></script>
+</body>
+</html>
