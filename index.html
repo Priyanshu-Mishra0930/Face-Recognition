@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAttend - Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="frontend\css\login_css.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <div class="left-panel">
+
+            <div class="brand">
+                <div class="logo">V</div>
+
+                <div>
+                    <h2>VisionAttend</h2>
+                    <p>Attendance, Reimagined.</p>
+                </div>
+            </div>
+
+            <div class="left-content">
+
+                <div class="scan-box">
+                    <div class="face">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                        <div class="mouth"></div>
+                    </div>
+
+                    <div class="scan-line"></div>
+
+                    <span class="corner top-left"></span>
+                    <span class="corner top-right"></span>
+                    <span class="corner bottom-left"></span>
+                    <span class="corner bottom-right"></span>
+                </div>
+
+                <h1>
+                    Smart Attendance.<br>
+                    <span>Powered by AI.</span>
+                </h1>
+
+                <p>
+                    Real-time attendance management using
+                    computer vision and face recognition.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="right-panel">
+
+            <div class="login-card">
+
+                <div class="login-header">
+                    <h1>Welcome back</h1>
+                    <p>Sign in to continue to VisionAttend</p>
+                </div>
+
+                <div class="role-selection">
+
+                    <button type="button" class="role active" onclick="selectRole('teacher', this)">
+                        <span>👨‍🏫</span>
+                        Teacher
+                    </button>
+
+                    <button type="button" class="role" onclick="selectRole('student', this)">
+                        <span>🎓</span>
+                        Student
+                    </button>
+
+                </div>
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+                        <label for="registrationId">
+                            University Registration ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registrationId"
+                            placeholder="Enter your registration ID"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+
+                        <div class="password-label">
+                            <label for="password">Password</label>
+                            <a href="#">Forgot password?</a>
+                        </div>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        Login
+                    </button>
+
+                </form>
+
+                <p id="message"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="frontend/js/login_js.js"></script>
+
+</body>
+</html>
